@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Startup Safary</title>
+  </head>
+  <body>
+    <h1>Hello Dear People!</h1>
+    <p>Welcome to Stone Soup</p>
+    <script>
+
+      var request = new XMLHttpRequest()
+
+      request.addEventListener("load", function() {
+        var responseText = request.responseText
+        var responseObject = JSON.parse(responseText)
+        alert(responseObject.name + " - " + responseObject.date)
+      })
+
+      request.open("GET", "/info.json")
+      request.send()
+
+    </script>
+  </body>
+</html>
